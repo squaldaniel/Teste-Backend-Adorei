@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SalesModel;
+use App\Http\Requests\SalesRequest;
 
 class SalesController extends Controller
 {
@@ -11,14 +13,14 @@ class SalesController extends Controller
      */
     public function index()
     {
-        //
+        return SalesModel::get();
     }
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SalesRequest $request)
     {
-        return $request;
+        return $request->all();
     }
     /**
      * Display the specified resource.

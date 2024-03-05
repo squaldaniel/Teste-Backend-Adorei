@@ -3,9 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function(){
-    return ["api"=>"data"];
-});
+// Route::get('/', function(){
+//     return ["api"=>"data"];
+// });
 
 Route::group(['prefix'=>'products'], function(){
     Route::get('/', [
@@ -31,10 +31,12 @@ Route::group(['prefix'=>'products'], function(){
 
 });
 
+Route::get('teste', function(){
+    return ['fail' => 'redirect'];
+});
 Route::group(['prefix'=>'sales'], function(){
-    Route::post('/store', [
-        App\Http\Controllers\SalesController::class,
-        'store'
+    Route::post('store', [
+        App\Http\Controllers\SalesController::class, 'store'
     ]);
     Route::get('/', [
                 App\Http\Controllers\SalesController::class,
