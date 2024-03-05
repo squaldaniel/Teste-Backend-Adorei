@@ -26,7 +26,6 @@ class ProductsController extends Controller
             'product_id' => $product->id
             ]);
     }
-
     /**
      * Display the specified resource.
      */
@@ -39,18 +38,29 @@ class ProductsController extends Controller
      */
     public function update(ProductsRequest $request, string $id)
     {
-        $request->validate([
-            'product_id'=>'required|integer'
+        ProductsModel::where('id', $id)
+                    ->update($request->all());
+        return response([
+            'message' => 'Product updated successfully',
+            'product' => ProductsModel::find($id)
         ]);
-
-        dd($request->all());
     }
-
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $product = ProductsModel::find($id);
+        if ($product){
+            ProductsModel::where('id', $id)->delete();
+            return response([
+                'message' => 'product deleted successfully'
+            ]);
+        } else {
+            return response([
+                'message' => 'product not found'
+            ]);
+        }
+
     }
 }
