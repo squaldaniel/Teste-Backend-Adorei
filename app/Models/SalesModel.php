@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\ProductsModel;
+// use App\Models\SalesProductsModel;
 
 class SalesModel extends Model
 {
@@ -15,8 +16,24 @@ class SalesModel extends Model
         'sales_id',
         'amount',
     ];
+    // public function products ()
+    // {
+    //     return $this->belongsToMany(
+    //         ProductsModel::class,
+    //         'sales_products',
+    //         'sales_id',
+    //         'id',
+    //         'id',
+    //         'products'
+    //     );
+    // }
     public function products ()
     {
-        return $this->hasMany(ProductsModel::class);
+        return $this->belongsToMany(
+            ProductsModel::class,
+            'sales_products',
+            'sales_id',
+            'products_id'
+        );
     }
 }

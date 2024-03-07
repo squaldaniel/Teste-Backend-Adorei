@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\SalesProductsModel;
+
 class ProductsModel extends Model
 {
     use HasFactory;
@@ -21,5 +23,16 @@ class ProductsModel extends Model
         unset($attributes['id']);
 
         return $attributes;
+    }
+    public function products()
+    {
+        return $this->belongsToMany(
+                        SalesModel::class,
+                        'sales_products',
+                        'products_id',
+                        'id',
+                        'id',
+                        'products'
+                    );
     }
 }

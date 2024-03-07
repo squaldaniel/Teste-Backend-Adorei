@@ -38,7 +38,6 @@ class SalesRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         $response = [
-            'mensagem' => 'Falha na validação',
             'erros' => $validator->errors(),
         ];
 

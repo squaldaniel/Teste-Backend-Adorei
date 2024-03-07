@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SalesModel;
 use App\Http\Requests\SalesRequest;
+use App\Models\SalesProductsModel;
 
 class SalesController extends Controller
 {
@@ -20,7 +21,23 @@ class SalesController extends Controller
      */
     public function store(SalesRequest $request)
     {
-        return $request->all();
+        $amount = (double) 0;
+        $product_ids = [];
+        foreach($request->products as $key => $value){
+            array_push($product_ids, $value['product_id']);
+            $amount += ($value['price'] * $value['amount']);
+        }
+        $sale = SalesModel::create([
+            'amount'=>$amount
+        ]);
+        foreach ($product_ids as $key => $value) {
+            $productsInSale = SalesProductsModel::create([
+                'sales_id' => $sale->id,
+                'products_id' => $value
+            ]);
+        }
+        return SalesModel::where('id', $sale->id)
+                        ->with('products')->get();
     }
     /**
      * Display the specified resource.
