@@ -23,11 +23,11 @@ RUN chown -R www-data:www-data /var/www/html/storage/
 RUN a2enmod rewrite
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
 
-COPY setup.sh /usr/local/bin/setup.sh
-RUN chmod +x /usr/local/bin/setup.sh
+# COPY setup.sh /usr/local/bin/setup.sh
+# RUN chmod +x /usr/local/bin/setup.sh
 
 # Exponha a porta 80
 EXPOSE 80
 
 # Inicie o Apache
-CMD ["setup.sh"]
+CMD ["apache2-foreground"]
