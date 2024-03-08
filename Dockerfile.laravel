@@ -1,0 +1,33 @@
+FROM php:8.2-apache
+
+RUN docker-php-ext-install pdo_mysql mysqli
+
+RUN apt-get update && \
+    apt-get install -y \
+        git \
+        unzip
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+RUN mv /usr/local/bin/composer /usr/local/bin/composer.phar
+RUN echo 'alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"' >> ~/.bashrc
+
+# diretório de trabalho
+WORKDIR /var/www/html
+
+# Copiar a pasta "Teste-Backend-Adorei" para o conteiner
+COPY Teste-Backend-Adorei /var/www/html
+
+# permissões
+RUN chown -R www-data:www-data /var/www/html/storage/
+
+RUN a2enmod rewrite
+COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+
+COPY setup.sh /usr/local/bin/setup.sh
+RUN chmod +x /usr/local/bin/setup.sh
+
+# Exponha a porta 80
+EXPOSE 80
+
+# Inicie o Apache
+CMD ["setup.sh"]

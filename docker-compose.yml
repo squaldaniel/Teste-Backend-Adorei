@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mysql-db:
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: adorei
+      MYSQL_USER: adorei
+      MYSQL_PASSWORD: 1234
+    networks:
+      - adoreiTeste
+
+  laravel-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.laravel
+    ports:
+      - "8000:80"
+    networks:
+      - adoreiTeste
+
+networks:
+  adoreiTeste:
+    driver: bridge
