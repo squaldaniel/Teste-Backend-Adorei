@@ -15,7 +15,7 @@ RUN echo 'alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"' 
 WORKDIR /var/www/html
 
 # Copiar a pasta "Teste-Backend-Adorei" para o conteiner
-COPY Teste-Backend-Adorei /var/www/html
+COPY APILaravel10 /var/www/html
 
 # permissões
 RUN chown -R www-data:www-data /var/www/html/storage/
