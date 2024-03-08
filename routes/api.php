@@ -56,3 +56,6 @@ Route::group(['prefix'=>'sales'], function(){
             ]);
 
 });
+Route::get('test', function(){
+    return App\Models\ProductsModel::with('sales')->get();
+});

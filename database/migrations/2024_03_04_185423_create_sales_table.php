@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
-            // $table->string('sales_id', 30)->unique()->nullable();
             $table->double('amount', 7,3)->nullable();
+            $table->integer('items')->nullable();
             $table->timestamps();
         });
     }

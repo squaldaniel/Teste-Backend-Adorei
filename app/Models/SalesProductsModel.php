@@ -15,7 +15,9 @@ class SalesProductsModel extends Model
     public $fillable = [
         'sales_id',
         'products_id',
+        'amount',
     ];
+    protected $hidden = ['created_at', 'updated_at'];
     public function sales()
     {
         $this->belongsToMany(ProductsModel::class, 'products_id');

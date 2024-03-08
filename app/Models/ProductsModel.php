@@ -16,6 +16,7 @@ class ProductsModel extends Model
         'price',
         'description',
     ];
+    protected $hidden = ['created_at', 'updated_at'];
     public function toArray()
     {
         $attributes = $this->getAttributes();
@@ -24,15 +25,13 @@ class ProductsModel extends Model
 
         return $attributes;
     }
-    public function products()
+    public function sales()
     {
-        return $this->belongsToMany(
+        return $this->belongsTo(
                         SalesModel::class,
-                        'sales_products',
                         'products_id',
-                        'id',
-                        'id',
-                        'products'
+                        // 'id',
+                        // 'id',   
                     );
     }
 }

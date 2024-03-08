@@ -14,7 +14,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return SalesModel::get();
+        return SalesModel::with('products')->get();
     }
     /**
      * Store a newly created resource in storage.
@@ -23,28 +23,37 @@ class SalesController extends Controller
     {
         $amount = (double) 0;
         $product_ids = [];
+        $quant = [];
         foreach($request->products as $key => $value){
-            array_push($product_ids, $value['product_id']);
+            array_push($product_ids, [$value['product_id']=>$value['amount']]);
+            array_push($quant, $value['amount']);
             $amount += ($value['price'] * $value['amount']);
         }
+        $totalItems = array_sum($quant);
         $sale = SalesModel::create([
-            'amount'=>$amount
+            'amount'=> $amount,
+            'items'=> $totalItems
         ]);
-        foreach ($product_ids as $key => $value) {
-            $productsInSale = SalesProductsModel::create([
-                'sales_id' => $sale->id,
-                'products_id' => $value
-            ]);
-        }
+        foreach ($product_ids as $product) {
+            foreach($product as $key => $quant ){
+                $productsInSale = SalesProductsModel::create([
+                    'sales_id' => $sale->id,
+                    'products_id' => $key,
+                    'amount' => $quant
+                ]);
+            }
+        }  
         return SalesModel::where('id', $sale->id)
-                        ->with('products')->get();
+                        ->with('products')
+                        ->get();
     }
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        return SalesModel::where('id', $id)
+                ->with('products')->get();
     }
     /**
      * Update the specified resource in storage.

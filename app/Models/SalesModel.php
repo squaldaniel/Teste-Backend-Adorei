@@ -13,27 +13,22 @@ class SalesModel extends Model
     use HasFactory;
     public $table = 'sales';
     public $fillable = [
-        'sales_id',
         'amount',
+        'items',
     ];
-    // public function products ()
-    // {
-    //     return $this->belongsToMany(
-    //         ProductsModel::class,
-    //         'sales_products',
-    //         'sales_id',
-    //         'id',
-    //         'id',
-    //         'products'
-    //     );
-    // }
+    protected $hidden = ['created_at', 'updated_at'];
     public function products ()
     {
         return $this->belongsToMany(
             ProductsModel::class,
             'sales_products',
             'sales_id',
-            'products_id'
-        );
+            'products_id',
+        )
+        ->select([
+            'products.id'
+            , 'products.name'
+            , 'products.price'
+            , 'sales_products.amount']);
     }
 }
