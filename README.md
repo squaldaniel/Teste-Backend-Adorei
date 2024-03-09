@@ -1,6 +1,9 @@
 # Teste para Empresa Adorei
-Teste: construção de uma API para compra de celulares onde será valiado
-as boas práticas de programação e dominio do framewirk Laravel
+Teste: construção de uma API para compra de celulares onde será avaliado
+as boas práticas de programação e dominio do `Framework Laravel`
+
+#### Tecnologias utilizadas
+> `Laravel FrameWork 10`, `Mysql 8.0`
 
 ### Instruções para funcionamento da APi 
 Para poder rodar a aplicação, clone este repositório, entre na pasta através de um prompt de comando e execute o comando 
@@ -27,6 +30,3 @@ Agora para ter dados iniciais, é preciso executar os semeadores.
 php artisan db:seed
 ```
 
-Para instalar as dependências e logo em seguida:
-
-docker-compose up
