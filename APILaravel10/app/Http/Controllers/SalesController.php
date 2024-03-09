@@ -60,7 +60,38 @@ class SalesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $newAmountSale = (double) 0;
+        $newQuantItems = (integer) 0;
+        // get actual sale
+        $actualSale = SalesModel::with('products')->find($id);
+        // get actual items
+        $actualItems = $actualSale->products;
+        // get ids
+        $actualProductsIds = [];
+        // get all items id
+        foreach ($actualItems as $key => $product) {
+                array_push($actualProductsIds, $product->id);
+            }
+        // delete old products
+        foreach ($actualProductsIds as $key => $value) {
+                SalesProductsModel::where('products_id', $value)
+                                    ->delete();
+            }
+        // --
+        foreach ($request->products as $key => $product) {
+                SalesProductsModel::create([
+                    'sales_id' => $actualSale->id,
+                    'products_id' => $product['product_id'],
+                    'amount' => $product['amount']
+                ]);
+                $newAmountSale += ($product['price'] * $product['amount']);
+                $newQuantItems += $product['amount'];
+            }
+        $actualSale->update([
+            'amount'=> $newAmountSale,
+            'items'=> $newQuantItems
+        ]);
+        return $actualSale->with('products')->get();
     }
     /**
      * Remove the specified resource from storage.
