@@ -6,25 +6,23 @@ RUN apt-get update && \
     apt-get install -y \
         git \
         unzip
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
-RUN mv /usr/local/bin/composer /usr/local/bin/composer.phar
-RUN echo 'alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"' >> ~/.bashrc
-
 # diretório de trabalho
 WORKDIR /var/www/html
-
 # Copiar a pasta "Teste-Backend-Adorei" para o conteiner
 COPY APILaravel10 /var/www/html
-
 # permissões
 RUN chown -R www-data:www-data /var/www/html/storage/
 
+# Baixe e instale o Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+# RUN mv /usr/local/bin/composer /usr/local/bin/composer.phar
+# RUN echo 'alias composer="php -d memory_limit=-1 /usr/local/bin/composer.phar"' >> ~/.bashrc
+
+COPY setup.sh /usr/local/bin/setup.sh
+RUN chmod +x /usr/local/bin/setup.sh
+
 RUN a2enmod rewrite
 COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
-
-# COPY setup.sh /usr/local/bin/setup.sh
-# RUN chmod +x /usr/local/bin/setup.sh
 
 # Exponha a porta 80
 EXPOSE 80
