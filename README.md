@@ -8,7 +8,7 @@ Para poder rodar a aplicação, clone este repositório, entre na pasta através
 ```bash
 docker-compose up
 ```
-OU através de uma ferramenta grafica como o docker-desktop ou VScode, na sopções relacionadas. Após esses passos, e os containers estarem sendo executados, entre no terminal do container da API Laravel 10, e execute os comandos para inicializar o Ambiente da API como: 
+OU através de uma ferramenta gráfica como o docker-desktop ou VScode, nas opções relacionadas. Após esses passos, e os containers estarem sendo executados, entre no terminal do container da API Laravel 10, e execute os comandos para inicializar o Ambiente da API como: 
 ```bash
 composer install
 ```
@@ -16,6 +16,8 @@ Posteriormente:
 ```bash
 mv .env.example .env
 ```
+> Obs: Como é apenas um teste, as configurações de banco de dados estão no env.example, mas não é uma prática recomendada.
+
 depois execute:
 ```bash
 php artisan migrate
