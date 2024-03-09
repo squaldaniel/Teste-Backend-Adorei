@@ -1,50 +1,453 @@
 {
-    "_type":"export",
-    "__export_format":4,
-    "__export_date":"2024-03-09T18:07:10.322Z",
-    "__export_source":"insomnia.desktop.app:v2022.7.5",
-    "resources":
-        [
-            {
-                "_id":"req_bcc2214ced3c4133ab0aaa44b2384312",
-                "parentId":"wrk_029bf67deb3f496bb311be988001c924",
-                "modified":1710006362156,
-                "created":1709839150293,
-                "url":"{{ _.host }}",
-                "name":"Endpoints",
-                "description":"",
-                "method":"GET",
-                "body":{},
-                "parameters":[],
-                "headers":[],
-                "authentication":{},
-                "metaSortKey":-1709839150296,
-                "isPrivate":false,
-                "settingStoreCookies":true,
-                "settingSendCookies":true,
-                "settingDisableRenderRequestBody":false,
-                "settingEncodeUrl":true,
-                "settingRebuildPath":true,
-                "settingFollowRedirects":"global",
-                "_type":"request"
-            },
-            {
-                "_id":"wrk_029bf67deb3f496bb311be988001c924",
-                "parentId":null,
-                "modified":1709579915716,
-                "created":1709579915716,
-                "name":"Teste-Adorei",
-                "description":"",
-                "scope":"collection",
-                "_type":"workspace"
-            },
-            {
-                "_id":"req_798fc0feca194237bf65f19612fe8b86",
-                "parentId":"fld_16b7738da5b642c28163b6b69ac9a1ac",
-                "modified":1709909864376,
-                "created":1709676849110,
-                "url":"{{ _.host }}sales/store",
-                "name":"new sale",
-                "description":"",
-                "method":"POST",
-                "body":{"mimeType":"application/json","text":"{\n\t\"products\": [\n\t\t{\n      \"product_id\": 1,\n      \"nome\": \"Celular Iphone 15\",\n      \"price\": 1.800,\n      \"amount\": 3\n    },\n    {\n      \"product_id\": 2,\n      \"nome\": \"Celular Xaomi XD\",\n      \"price\": 3.100,\n      \"amount\": 1\n    }\n\t]\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709642290022,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_16b7738da5b642c28163b6b69ac9a1ac","parentId":"wrk_029bf67deb3f496bb311be988001c924","modified":1709642257987,"created":1709642257987,"name":"SALES","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1709642257988,"_type":"request_group"},{"_id":"req_87b7799e243a4dd6bd8577f32e1ad424","parentId":"fld_16b7738da5b642c28163b6b69ac9a1ac","modified":1710005918602,"created":1709986130276,"url":"{{ _.host }}sales/update/2","name":"Update sale","description":"","method":"PUT","body":{"mimeType":"application/json","text":"{\n\t\"products\": [\n\t\t{\n      \"product_id\": 1,\n      \"nome\": \"Celular Iphone 15\",\n      \"price\": 1.800,\n      \"amount\": 3\n    },\n\t\t{\n\t\t\t\"product_id\": 3,\n      \"nome\": \"Celular Galaxy note\",\n\t\t\t\"price\": 2.600,\n\t\t\t\"amount\": 5\n    }\n\t]\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709642285318,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_540c2f5ad65a48d6b83ce899c5a4ac97","parentId":"fld_16b7738da5b642c28163b6b69ac9a1ac","modified":1710005847473,"created":1710003152984,"url":"{{ _.host }}sales/delete/9","name":"delete sale","description":"","method":"DELETE","body":{"mimeType":"application/json","text":""},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709642282966,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_b25708ac4a944dfdbe9506644565be93","parentId":"fld_16b7738da5b642c28163b6b69ac9a1ac","modified":1709846478770,"created":1709658010923,"url":"{{ _.host }}sales/","name":"show All","description":"","method":"GET","body":{"mimeType":"application/json","text":""},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709642280614,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_12bafcc0a3bb43e799d4525dfc9768c1","parentId":"fld_16b7738da5b642c28163b6b69ac9a1ac","modified":1709989902074,"created":1709846575830,"url":"{{ _.host }}sales/5","name":"Get By Id","description":"","method":"GET","body":{"mimeType":"application/json","text":""},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709642271206,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_8641d323c64747568ca6341c38ccbf6a","parentId":"fld_abe95c8424d54c59b02d24198adb440a","modified":1709599607039,"created":1709583022374,"url":"{{ _.host }}products/","name":"Show All","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1709594678020,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"fld_abe95c8424d54c59b02d24198adb440a","parentId":"wrk_029bf67deb3f496bb311be988001c924","modified":1709599597835,"created":1709599597835,"name":"PRODUCTS","description":"","environment":{},"environmentPropertyOrder":null,"metaSortKey":-1709599597835,"_type":"request_group"},{"_id":"req_8d746ee460f549a69abca6d2b6824d75","parentId":"fld_abe95c8424d54c59b02d24198adb440a","modified":1710001348434,"created":1709599098427,"url":"{{ _.host }}products/1","name":"Get by Id","description":"","method":"GET","body":{},"parameters":[],"headers":[],"authentication":{},"metaSortKey":-1709594677995,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_d3e6c9cea20846299dc11b99459db604","parentId":"fld_abe95c8424d54c59b02d24198adb440a","modified":1709990617823,"created":1709584998384,"url":"{{ _.host }}products/store","name":"new products","description":"","method":"POST","body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Celular Galaxy note\",\n\t\"price\": 2600,\n\t\"description\": \"Coorporativa\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709594677970,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_2c914236b1ed4769a6a5c0b1234129c9","parentId":"fld_abe95c8424d54c59b02d24198adb440a","modified":1709638293838,"created":1709601087430,"url":"{{ _.host }}products/update/1","name":"update products","description":"","method":"PUT","body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Celular GALAXY A3\",\n\t\"price\": 1.800,\n\t\"description\": \"Lorenzo Ipsulum\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709230826373,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"req_0a0a5005e69f450c9ad77814561f4b9a","parentId":"fld_abe95c8424d54c59b02d24198adb440a","modified":1709641418062,"created":1709638991497,"url":"{{ _.host }}products/delete/2","name":"delete products","description":"","method":"DELETE","body":{"mimeType":"application/json","text":"{\n\t\"name\": \"Celular GALAXY A3\",\n\t\"price\": 1.800,\n\t\"description\": \"Lorenzo Ipsulum\"\n}"},"parameters":[],"headers":[{"name":"Content-Type","value":"application/json"}],"authentication":{},"metaSortKey":-1709048900574.5,"isPrivate":false,"settingStoreCookies":true,"settingSendCookies":true,"settingDisableRenderRequestBody":false,"settingEncodeUrl":true,"settingRebuildPath":true,"settingFollowRedirects":"global","_type":"request"},{"_id":"env_6c171107fe02019e317d6d46675aa98083dbfa6f","parentId":"wrk_029bf67deb3f496bb311be988001c924","modified":1709579915731,"created":1709579915731,"name":"Base Environment","data":{},"dataPropertyOrder":null,"color":null,"isPrivate":false,"metaSortKey":1709579915731,"_type":"environment"},{"_id":"jar_6c171107fe02019e317d6d46675aa98083dbfa6f","parentId":"wrk_029bf67deb3f496bb311be988001c924","modified":1709579915736,"created":1709579915736,"name":"Default Jar","cookies":[],"_type":"cookie_jar"},{"_id":"spc_62815d89da954b6a81b2dadc621b0e4f","parentId":"wrk_029bf67deb3f496bb311be988001c924","modified":1709579915717,"created":1709579915717,"fileName":"Teste-Adorei","contents":"","contentType":"yaml","_type":"api_spec"},{"_id":"env_40ea7ef1c99a4e90b81bcbcd9b06c2a6","parentId":"env_6c171107fe02019e317d6d46675aa98083dbfa6f","modified":1709907130195,"created":1709579928954,"name":"Developing","data":{"host":"http://127.0.0.1:8000/"},"dataPropertyOrder":{"&":["host"]},"color":"#04ff00","isPrivate":false,"metaSortKey":1709579928954,"_type":"environment"},{"_id":"env_32f1536b8e6448be8fae7816c792ce39","parentId":"env_6c171107fe02019e317d6d46675aa98083dbfa6f","modified":1709909576974,"created":1709907112457,"name":"docker","data":{"host":"http://127.0.0.1:8000/"},"dataPropertyOrder":{"&":["host"]},"color":"#02b6f2","isPrivate":false,"metaSortKey":1709907112457,"_type":"environment"}]}
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Teste-Adorei",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "": {
+      "get": {
+        "description": "",
+        "summary": "Endpoints",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "security": []
+      }
+    },
+    "products/": {
+      "get": {
+        "description": "",
+        "summary": "Show All",
+        "tags": [
+          "PRODUCTS"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "security": []
+      }
+    },
+    "products/store": {
+      "post": {
+        "description": "",
+        "summary": "new products",
+        "tags": [
+          "PRODUCTS"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Celular Galaxy note",
+                  "price": 2600,
+                  "description": "Coorporativa"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "products/1": {
+      "get": {
+        "description": "",
+        "summary": "Get by Id",
+        "tags": [
+          "PRODUCTS"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "security": []
+      }
+    },
+    "products/update/1": {
+      "put": {
+        "description": "",
+        "summary": "update products",
+        "tags": [
+          "PRODUCTS"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Celular GALAXY A3",
+                  "price": 1.8,
+                  "description": "Lorenzo Ipsulum"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "products/delete/2": {
+      "delete": {
+        "description": "",
+        "summary": "delete products",
+        "tags": [
+          "PRODUCTS"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Celular GALAXY A3",
+                  "price": 1.8,
+                  "description": "Lorenzo Ipsulum"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "sales/": {
+      "get": {
+        "description": "",
+        "summary": "show All",
+        "tags": [
+          "SALES"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {}
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "sales/store": {
+      "post": {
+        "description": "",
+        "summary": "new sale",
+        "tags": [
+          "SALES"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "products": [
+                    {
+                      "product_id": 1,
+                      "nome": "Celular Iphone 15",
+                      "price": 1.8,
+                      "amount": 3
+                    },
+                    {
+                      "product_id": 2,
+                      "nome": "Celular Xaomi XD",
+                      "price": 3.1,
+                      "amount": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "sales/5": {
+      "get": {
+        "description": "",
+        "summary": "Get By Id",
+        "tags": [
+          "SALES"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {}
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "sales/update/2": {
+      "put": {
+        "description": "",
+        "summary": "Update sale",
+        "tags": [
+          "SALES"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "products": [
+                    {
+                      "product_id": 1,
+                      "nome": "Celular Iphone 15",
+                      "price": 1.8,
+                      "amount": 3
+                    },
+                    {
+                      "product_id": 3,
+                      "nome": "Celular Galaxy note",
+                      "price": 2.6,
+                      "amount": 5
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "sales/delete/9": {
+      "delete": {
+        "description": "",
+        "summary": "delete sale",
+        "tags": [
+          "SALES"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "401": {
+            "description": "authorization failed"
+          },
+          "422": {
+            "description": "validation failed"
+          },
+          "500": {
+            "description": "unknown server error"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {}
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "Base Environment",
+      "variables": {}
+    },
+    {
+      "description": "Developing",
+      "variables": {
+        "host": {
+          "default": "http://127.0.0.1:8000/"
+        }
+      }
+    },
+    {
+      "description": "docker",
+      "variables": {
+        "host": {
+          "default": "http://127.0.0.1:8000/"
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "PRODUCTS",
+      "description": ""
+    },
+    {
+      "name": "SALES",
+      "description": ""
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
