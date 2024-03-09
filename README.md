@@ -16,11 +16,15 @@ Posteriormente:
 ```bash
 mv .env.example .env
 ```
-> Obs: Como é apenas um teste, as configurações de banco de dados estão no env.example, mas não é uma prática recomendada.
+> `Obs:` Como é apenas um teste, as configurações de banco de dados estão no env.example, mas não é uma prática recomendada.
 
-depois execute:
+Depois é necessário executar as migrações:
 ```bash
 php artisan migrate
+```
+Agora para ter dados iniciais, é preciso executar os semeadores.
+```bash
+php artisan db:seed
 ```
 
 Para instalar as dependências e logo em seguida:
