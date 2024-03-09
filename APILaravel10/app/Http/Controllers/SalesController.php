@@ -64,6 +64,11 @@ class SalesController extends Controller
         $newQuantItems = (integer) 0;
         // get actual sale
         $actualSale = SalesModel::with('products')->find($id);
+        if(!$actualSale){
+            return response([
+                'message' => 'Sale not found'
+            ], 400);
+        }
         // get actual items
         $actualItems = $actualSale->products;
         // get ids
@@ -73,10 +78,9 @@ class SalesController extends Controller
                 array_push($actualProductsIds, $product->id);
             }
         // delete old products
-        foreach ($actualProductsIds as $key => $value) {
-                SalesProductsModel::where('products_id', $value)
-                                    ->delete();
-            }
+        SalesProductsModel::where(
+            'sales_id', $id)
+            ->delete();
         // --
         foreach ($request->products as $key => $product) {
                 SalesProductsModel::create([
@@ -98,6 +102,11 @@ class SalesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $actualSale = SalesModel::with('products')->find($id);
+        foreach($actualSale->products as $key => $value){
+                SalesProductsModel::where('sales_id', $id)->delete();
+            }
+        $actualSale->delete();
+        return response(['message' => 'sale successfully deleted'], 200);
     }
 }
