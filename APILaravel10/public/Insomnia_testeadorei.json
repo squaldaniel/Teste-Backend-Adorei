@@ -2,13 +2,13 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Teste-Adorei",
-    "description": "",
+    "description": "Documentação da API, para avaliação de desenvolvedor backend da empresa adorei.",
     "version": "1.0.0"
   },
   "paths": {
     "": {
       "get": {
-        "description": "",
+        "description": "Documentação da API, para avaliação de desenvolvedor backend da empresa adorei.",
         "summary": "Endpoints",
         "tags": [],
         "parameters": [],
