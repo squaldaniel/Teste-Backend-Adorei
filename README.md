@@ -3,7 +3,7 @@ Teste: construção de uma API para compra de celulares onde será avaliado
 as boas práticas de programação e dominio do `Framework Laravel`
 
 #### Tecnologias utilizadas
-> `Laravel FrameWork 10`, `Mysql 8.0`
+> `Laravel FrameWork 10`, `Mysql 8`
 
 ### Instruções para funcionamento da APi 
 Para poder rodar a aplicação, clone este repositório, entre na pasta através de um prompt de comando e execute o comando 
@@ -19,6 +19,8 @@ Posteriormente:
 ```bash
 mv .env.example .env
 ```
+
+> [!CAUTION]
 > `Obs:` Como é apenas um teste, as configurações de banco de dados estão no env.example, mas não é uma prática recomendada.
 
 Depois é necessário executar as migrações:
