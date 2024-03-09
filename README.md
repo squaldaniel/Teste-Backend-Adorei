@@ -35,4 +35,5 @@ Agora para ter dados iniciais, é preciso executar os semeadores.
 ```bash
 php artisan db:seed
 ```
+Na pasta `public` encontras-se o arquivo *JSON*, com os endpoints disponíveis na aplicação.
 
