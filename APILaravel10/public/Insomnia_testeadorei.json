@@ -2,14 +2,14 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Teste-Adorei",
-    "description": "Documentação da API, para avaliação de desenvolvedor backend da empresa adorei.",
+    "description": "Aplicação de testes de conhecimento em desenvolvimento backend com framework Laravel",
     "version": "1.0.0"
   },
   "paths": {
     "": {
       "get": {
-        "description": "Documentação da API, para avaliação de desenvolvedor backend da empresa adorei.",
-        "summary": "Endpoints",
+        "description": "Endpoint com a documentação deste teste.",
+        "summary": "Documentação",
         "tags": [],
         "parameters": [],
         "responses": {
@@ -31,7 +31,7 @@
     },
     "products/": {
       "get": {
-        "description": "",
+        "description": "Mostra todos os produtos cadastrados no sistema",
         "summary": "Show All",
         "tags": [
           "PRODUCTS"
@@ -96,7 +96,7 @@
     },
     "products/1": {
       "get": {
-        "description": "",
+        "description": "Seleciona um produto pelo id",
         "summary": "Get by Id",
         "tags": [
           "PRODUCTS"
